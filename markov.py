@@ -54,7 +54,9 @@ def make_text(chains):
         # Note that for long texts (like a full book), this might mean
         # it would run for a very long time.
         word = choice(chains[key])
-        if char_count + len(word) <= 140:
+        check = char_count + len(word)
+        print check
+        if check <= 140:
             words.append(word)
             char_count += len(word)
             key = (key[1], word)
